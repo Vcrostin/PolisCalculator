@@ -11,7 +11,7 @@ namespace Calc_Logic.Transformtopolis
         public string CurrentString { get; set; }
         public string ExitString { get; set; } = "";
         string[] CurrentStringToArray { get; set; }
-        Stack<int> Calculator { get; set; } = new Stack<int>();
+        Stack<double> Calculator { get; set; } = new Stack<double>();
         Stack<PriorityInfo> Operator { get; set; } = new Stack<PriorityInfo>();
         public TransformToPolisView(string currentString)
         {
@@ -24,30 +24,37 @@ namespace Calc_Logic.Transformtopolis
             //string Operator = "";
             for(int i = 0; i < CurrentString.Length; i++)
             {
-                if ((CurrentString[i] >= '0') && (CurrentString[i] <= '9'))
+                if ((CurrentString[i] == '.') || (CurrentString[i] == ','))
                 {
-                    ExitString += CurrentString[i];
+                    ExitString += ',';
                 }
                 else
                 {
-                    if (Operator.Count > 0)
+                    if ((CurrentString[i] >= '0') && (CurrentString[i] <= '9'))
                     {
-
-                        while ((Operator.Count > 0) && (Operator.Peek().Priority > new PriorityInfo(CurrentString[i].ToString()).Priority))
-                        {
-                            ExitString += " " + Operator.Pop().Txt;
-                        }
-                    }
-                    if (CurrentString[i] == ')')
-                    {
-                        Operator.Pop();
+                        ExitString += CurrentString[i];
                     }
                     else
                     {
-                        Operator.Push(new PriorityInfo(CurrentString[i].ToString()));
-                        if (ExitString.Length > 0)
+                        if (Operator.Count > 0)
                         {
-                            ExitString += " ";
+
+                            while ((Operator.Count > 0) && (Operator.Peek().Priority > new PriorityInfo(CurrentString[i].ToString()).Priority))
+                            {
+                                ExitString += " " + Operator.Pop().Txt;
+                            }
+                        }
+                        if (CurrentString[i] == ')')
+                        {
+                            Operator.Pop();
+                        }
+                        else
+                        {
+                            Operator.Push(new PriorityInfo(CurrentString[i].ToString()));
+                            if (ExitString.Length > 0)
+                            {
+                                ExitString += " ";
+                            }
                         }
                     }
                 }
@@ -63,8 +70,7 @@ namespace Calc_Logic.Transformtopolis
             CurrentStringToArray = ExitString.Split(' ');
             for(int i = 0; i < CurrentStringToArray.Length; i++)
             {
-                int Number;
-                if(int.TryParse(CurrentStringToArray[i],out Number))
+                if(double.TryParse(CurrentStringToArray[i],out double Number))
                 {
                     Calculator.Push(Number);
                 }
