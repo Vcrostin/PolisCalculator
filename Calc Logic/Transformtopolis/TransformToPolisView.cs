@@ -21,7 +21,7 @@ namespace Calc_Logic.Transformtopolis
         public void Transform()
         {
             CurrentString = SpacedString(CurrentString);
-            //string Operator = "";
+            string CurrentOperator = "";
             for(int i = 0; i < CurrentString.Length; i++)
             {
                 if ((CurrentString[i] == '.') || (CurrentString[i] == ','))
@@ -30,31 +30,45 @@ namespace Calc_Logic.Transformtopolis
                 }
                 else
                 {
-                    if ((CurrentString[i] >= '0') && (CurrentString[i] <= '9'))
+
+                    if (CurrentString.ToLower()[i] >= 'a' && CurrentString.ToLower()[i] < 'z')
                     {
-                        ExitString += CurrentString[i];
+                        CurrentOperator += CurrentString.ToLower()[i];
                     }
                     else
                     {
-                        if (Operator.Count > 0)
+                        if (CurrentOperator.Length > 0)
                         {
-
-                            while ((Operator.Count > 0) && (Operator.Peek().Priority > new PriorityInfo(CurrentString[i].ToString()).Priority))
-                            {
-                                ExitString += " " + Operator.Pop().Txt;
-                            }
+                            Operator.Push(new PriorityInfo(CurrentOperator));
+                            CurrentOperator = "";
                         }
-                        if (CurrentString[i] == ')')
+                        if ((CurrentString[i] >= '0') && (CurrentString[i] <= '9'))
                         {
-                            Operator.Pop();
+                            ExitString += CurrentString[i];
                         }
                         else
                         {
-                            Operator.Push(new PriorityInfo(CurrentString[i].ToString()));
-                            if (ExitString.Length > 0)
+                            if (Operator.Count > 0)
                             {
-                                ExitString += " ";
+
+                                while ((Operator.Count > 0) && (Operator.Peek().Priority > new PriorityInfo(CurrentString[i].ToString()).Priority))
+                                {
+                                    ExitString += " " + Operator.Pop().Txt;
+                                }
                             }
+                            if (CurrentString[i] == ')')
+                            {
+                                Operator.Pop();
+                            }
+                            else
+                            {
+                                Operator.Push(new PriorityInfo(CurrentString[i].ToString()));
+                                if (ExitString.Length > 0)
+                                {
+                                    ExitString += " ";
+                                }
+                            }
+
                         }
                     }
                 }
@@ -76,22 +90,53 @@ namespace Calc_Logic.Transformtopolis
                 }
                 else
                 {
-                    var a = Calculator.Pop();
-                    var b = Calculator.Pop();
-                    switch (CurrentStringToArray[i])
+                    if (!new PriorityInfo(CurrentStringToArray[i]).Unary)
                     {
-                        case "*":
-                            Calculator.Push(a * b);
-                            break;
-                        case "-":
-                            Calculator.Push(b - a);
-                            break;
-                        case "+":
-                            Calculator.Push(a + b);
-                            break;
-                        case "/":
-                            Calculator.Push(b / a);
-                            break;
+                        var a = Calculator.Pop();
+                        var b = Calculator.Pop();
+                        switch (CurrentStringToArray[i])
+                        {
+                            case "*":
+                                Calculator.Push(a * b);
+                                break;
+                            case "-":
+                                Calculator.Push(b - a);
+                                break;
+                            case "+":
+                                Calculator.Push(a + b);
+                                break;
+                            case "/":
+                                Calculator.Push(b / a);
+                                break;
+                            case "^":
+                                Calculator.Push((int)b ^ (int)a);
+                                break;
+                            case "|":
+                                Calculator.Push((int)b | (int)a);
+                                break;
+                            case "&":
+                                Calculator.Push((int)b & (int)a);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        var a = Calculator.Pop();
+                        switch (CurrentStringToArray[i])
+                        {
+                            case "sin":
+                                Calculator.Push(Math.Sin(a));
+                                break;
+                            case "cos":
+                                Calculator.Push(Math.Cos(a));
+                                break;
+                            case "tg":
+                                Calculator.Push(Math.Tan(a));
+                                break;
+                            case "ctg":
+                                Calculator.Push(1 / Math.Tan(a));
+                                break;
+                        }
                     }
                 }
             }
