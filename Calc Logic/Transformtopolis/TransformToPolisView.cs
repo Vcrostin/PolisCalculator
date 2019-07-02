@@ -92,55 +92,65 @@ namespace Calc_Logic.Transformtopolis
                 {
                     if (!new PriorityInfo(CurrentStringToArray[i]).Unary)
                     {
-                        var a = Calculator.Pop();
-                        var b = Calculator.Pop();
-                        switch (CurrentStringToArray[i])
-                        {
-                            case "*":
-                                Calculator.Push(a * b);
-                                break;
-                            case "-":
-                                Calculator.Push(b - a);
-                                break;
-                            case "+":
-                                Calculator.Push(a + b);
-                                break;
-                            case "/":
-                                Calculator.Push(b / a);
-                                break;
-                            case "^":
-                                Calculator.Push((int)b ^ (int)a);
-                                break;
-                            case "|":
-                                Calculator.Push((int)b | (int)a);
-                                break;
-                            case "&":
-                                Calculator.Push((int)b & (int)a);
-                                break;
-                        }
+                        BinaryMethod(i);
                     }
                     else
                     {
-                        var a = Calculator.Pop();
-                        switch (CurrentStringToArray[i])
-                        {
-                            case "sin":
-                                Calculator.Push(Math.Sin(a));
-                                break;
-                            case "cos":
-                                Calculator.Push(Math.Cos(a));
-                                break;
-                            case "tg":
-                                Calculator.Push(Math.Tan(a));
-                                break;
-                            case "ctg":
-                                Calculator.Push(1 / Math.Tan(a));
-                                break;
-                        }
+                        UnaryMethod(i);
                     }
                 }
             }
             return Calculator.Pop().ToString();
+        }
+
+        private void BinaryMethod(int i)
+        {
+            var a = Calculator.Pop();
+            var b = Calculator.Pop();
+            switch (CurrentStringToArray[i])
+            {
+                case "*":
+                    Calculator.Push(a * b);
+                    break;
+                case "-":
+                    Calculator.Push(b - a);
+                    break;
+                case "+":
+                    Calculator.Push(a + b);
+                    break;
+                case "/":
+                    Calculator.Push(b / a);
+                    break;
+                case "^":
+                    Calculator.Push((int)b ^ (int)a);
+                    break;
+                case "|":
+                    Calculator.Push((int)b | (int)a);
+                    break;
+                case "&":
+                    Calculator.Push((int)b & (int)a);
+                    break;
+            }
+        }
+
+        private void UnaryMethod(int i)
+        {
+            var a = Calculator.Pop();
+            switch (CurrentStringToArray[i])
+            {
+                case "sin":
+                    Calculator.Push(Math.Sin(a));
+                    break;
+                case "cos":
+                    Calculator.Push(Math.Cos(a));
+                    break;
+                case "tg":
+                    Calculator.Push(Math.Tan(a));
+                    break;
+                case "ctg":
+                    Calculator.Push(1 / Math.Tan(a));
+                    break;
+            }
         }
 
         private string SpacedString(string currentString)

@@ -117,32 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;OutputTxt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="InfoLabelForResult.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;InputTxt.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="OutputTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 23</value>
-  </data>
-  <data name="&gt;&gt;OutputTxt.Name" xml:space="preserve">
-    <value>OutputTxt</value>
-  </data>
-  <data name="Result.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 140</value>
-  </data>
-  <data name="InfoLabelForOutputTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>358, 15</value>
-  </data>
-  <data name="&gt;&gt;InputTxt.Name" xml:space="preserve">
-    <value>InputTxt</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAABAMYzAADGMwAAAAAAAAAA
@@ -1275,118 +1250,8 @@
         /////////0GRf//+S///////////////oT8=
 </value>
   </data>
-  <data name="OutputTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 75</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
-  <data name="InfoLabelForResult.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForOutputTxt.Name" xml:space="preserve">
-    <value>InfoLabelForOutputTxt</value>
-  </data>
-  <data name="InputTxt.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForOutputTxt.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="InfoLabelForOutputTxt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="InputTxt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 20</value>
-  </data>
-  <data name="&gt;&gt;Result.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="InfoLabelForOutputTxt.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>445, 172</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForResult.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="InfoLabelForOutputTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 49</value>
-  </data>
-  <data name="&gt;&gt;Result.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="OutputTxt.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;OutputTxt.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="InputTxt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForOutputTxt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="InfoLabelForResult.Text" xml:space="preserve">
-    <value>Результат вычислений</value>
-  </data>
-  <data name="&gt;&gt;Result.Name" xml:space="preserve">
-    <value>Result</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="InfoLabelForOutputTxt.Text" xml:space="preserve">
-    <value>Окно преобразования первоначального ввыражения в полис форму</value>
-  </data>
-  <data name="&gt;&gt;Result.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Result.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForResult.Name" xml:space="preserve">
-    <value>InfoLabelForResult</value>
-  </data>
-  <data name="&gt;&gt;InputTxt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutputTxt.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForOutputTxt.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;InfoLabelForResult.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;InputTxt.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="Result.Size" type="System.Drawing.Size, System.Drawing">
-    <value>421, 23</value>
-  </data>
-  <data name="InfoLabelForResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 112</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Polis calc</value>
-  </data>
-  <data name="InfoLabelForResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 15</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
-  </metadata>
 </root>

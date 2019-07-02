@@ -38,62 +38,46 @@
             // 
             // InputTxt
             // 
-            this.InputTxt.Location = new System.Drawing.Point(13, 13);
+            resources.ApplyResources(this.InputTxt, "InputTxt");
             this.InputTxt.Name = "InputTxt";
-            this.InputTxt.Size = new System.Drawing.Size(420, 20);
-            this.InputTxt.TabIndex = 0;
             this.InputTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.InputTxt_KeyUp);
             // 
             // InfoLabelForOutputTxt
             // 
-            this.InfoLabelForOutputTxt.AutoSize = true;
+            resources.ApplyResources(this.InfoLabelForOutputTxt, "InfoLabelForOutputTxt");
             this.InfoLabelForOutputTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.InfoLabelForOutputTxt.Location = new System.Drawing.Point(12, 49);
             this.InfoLabelForOutputTxt.Name = "InfoLabelForOutputTxt";
-            this.InfoLabelForOutputTxt.Size = new System.Drawing.Size(358, 15);
-            this.InfoLabelForOutputTxt.TabIndex = 1;
-            this.InfoLabelForOutputTxt.Text = "Окно преобразования первоначального ввыражения в полис форму";
             // 
             // OutputTxt
             // 
+            resources.ApplyResources(this.OutputTxt, "OutputTxt");
             this.OutputTxt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.OutputTxt.Location = new System.Drawing.Point(13, 75);
             this.OutputTxt.Name = "OutputTxt";
-            this.OutputTxt.Size = new System.Drawing.Size(420, 23);
-            this.OutputTxt.TabIndex = 2;
             // 
             // InfoLabelForResult
             // 
-            this.InfoLabelForResult.AutoSize = true;
+            resources.ApplyResources(this.InfoLabelForResult, "InfoLabelForResult");
             this.InfoLabelForResult.BackColor = System.Drawing.SystemColors.Control;
             this.InfoLabelForResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.InfoLabelForResult.Location = new System.Drawing.Point(12, 112);
             this.InfoLabelForResult.Name = "InfoLabelForResult";
-            this.InfoLabelForResult.Size = new System.Drawing.Size(125, 15);
-            this.InfoLabelForResult.TabIndex = 3;
-            this.InfoLabelForResult.Text = "Результат вычислений";
             // 
             // Result
             // 
+            resources.ApplyResources(this.Result, "Result");
             this.Result.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Result.Location = new System.Drawing.Point(12, 140);
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(421, 23);
-            this.Result.TabIndex = 4;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 450);
             this.Controls.Add(this.Result);
             this.Controls.Add(this.InfoLabelForResult);
             this.Controls.Add(this.OutputTxt);
             this.Controls.Add(this.InfoLabelForOutputTxt);
             this.Controls.Add(this.InputTxt);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Polis calc";
             this.ResumeLayout(false);
             this.PerformLayout();
 
